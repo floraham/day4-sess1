@@ -48,3 +48,39 @@ exclamation <- function(age, hometown){
 }
 exclamation(32, "Cornucopia")
 ```
+
+# Functions with conditionals 
+
+```{r}
+calculate_animal_age <- function(species, age_human_years) {
+  if (species == "dog") {
+    age_human_years * 7 
+  } else if (species == "goat") {
+    age_human_years * 4.7 
+  } else{
+    print("Please enter dog or goat.")
+  }
+}
+```
+
+```{r}
+calculate_animal_age(species = "dog", age_human_years = 10)
+calculate_animal_age(species = "goat", age_human_years = 4 )
+calculate_animal_age(species = "whale", age_human_years = 10)
+```
+
+Write a function that, given temperature in kelvin, if a user selects "metric" to the scale then return degrees Celcius, or if they select "Imperial" then return degrees in Fahrenheit.
+
+```{r}
+kelv_convert<- function(scale, kelvin){
+  if(scale == "metric"){
+    k_to_c =  kelvin - 273.15
+    print(k_to_c)
+  } else if (scale == "imperial"){
+    k_to_f = ((kelvin - 273.15)*1.8) + 32
+    print(k_to_f)
+  } 
+}
+kelv_convert("metric", 44)
+
+```
